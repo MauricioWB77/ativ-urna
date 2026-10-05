@@ -1,315 +1,227 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Urna Eletrônica</title>
 
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
 
         body {
-            background-color: #dcdcdc;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            background-color: #d3d3d3;
+            font-family: Arial;
+            text-align: center;
         }
 
         .urna {
-            width: 900px;
-            min-height: 600px;
+            width: 700px;
+            margin: 50px auto;
             background-color: #333;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 0 20px #555;
+            padding: 20px;
+            border-radius: 10px;
         }
 
-        .titulo {
+        h1 {
             color: white;
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 28px;
         }
 
-        .urna-conteudo {
-            display: flex;
-            gap: 25px;
-        }
-
-        /* Tela */
         .tela {
-            width: 55%;
-            background-color: #d9d9d9;
-            border: 8px solid #222;
-            min-height: 450px;
-            padding: 25px;
-            color: #111;
-        }
-
-        .tela h2 {
+            background-color: #f1f1f1;
+            padding: 20px;
             margin-bottom: 20px;
+            border-radius: 5px;
         }
 
         .candidato {
             background-color: white;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            border-left: 5px solid #444;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid black;
         }
 
-        .candidato strong {
-            font-size: 20px;
-        }
-
-        /* Teclado */
         .teclado {
-            width: 45%;
             background-color: #222;
             padding: 20px;
-            border-radius: 10px;
         }
 
-        .teclado h3 {
+        .teclado h2 {
             color: white;
-            text-align: center;
-            margin-bottom: 15px;
-        }
-
-        .botoes {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
         }
 
         .botao {
-            text-decoration: none;
-            background-color: #555;
+            display: inline-block;
+            width: 70px;
+            margin: 5px;
+            padding: 15px;
+            background-color: #666;
             color: white;
-            padding: 20px;
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
+            text-decoration: none;
+            font-size: 20px;
             border-radius: 5px;
-            box-shadow: 0 4px 0 #111;
         }
 
         .botao:hover {
-            background-color: #777;
+            background-color: #888;
         }
 
-        .botao:active {
-            transform: translateY(3px);
-            box-shadow: 0 1px 0 #111;
-        }
-
-       
         .confirmacao {
             display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            justify-content: center;
-            align-items: center;
+            background-color: white;
+            width: 400px;
+            padding: 30px;
+            margin: 30px auto;
+            border: 2px solid black;
+            border-radius: 10px;
         }
 
         .confirmacao:target {
-            display: flex;
-        }
-
-        .caixa-confirmacao {
-            background-color: white;
-            padding: 40px;
-            width: 400px;
-            text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 0 20px black;
-        }
-
-        .caixa-confirmacao h2 {
-            margin-bottom: 20px;
-            color: #222;
-        }
-
-        .caixa-confirmacao p {
-            font-size: 20px;
-            margin-bottom: 25px;
+            display: block;
         }
 
         .fechar {
             display: inline-block;
-            padding: 12px 25px;
             background-color: #333;
             color: white;
             text-decoration: none;
+            padding: 10px 20px;
             border-radius: 5px;
         }
 
         .fechar:hover {
             background-color: #555;
         }
+
     </style>
+
 </head>
 
 <body>
 
     <div class="urna">
 
-        <h1 class="titulo">URNA ELETRÔNICA</h1>
+        <h1>URNA ELETRÔNICA</h1>
 
-        <div class="urna-conteudo">
+        <div class="tela">
 
-            <div class="tela">
+            <h2>Candidatos</h2>
 
-                <h2>Escolha seu candidato</h2>
+            <div class="candidato">
 
-                <div class="candidato">
-                    <strong>Presidente</strong>
-                    <p>13 - Carlos Silva</p>
-                    <p>22 - João Santos</p>
-                    <p>45 - Marcos Oliveira</p>
-                </div>
+                <h3>Presidente</h3>
 
-                <div class="candidato">
-                    <strong>Governador</strong>
-                    <p>10 - Pedro Souza</p>
-                    <p>20 - Lucas Mendes</p>
-                    <p>30 - André Costa</p>
-                </div>
-
-                <p>
-                    Digite o número do candidato no teclado ao lado.
-                </p>
+                <p>13 - Carlos Silva</p>
+                <p>22 - João Santos</p>
 
             </div>
 
-            <div class="teclado">
+            <div class="candidato">
 
-                <h3>TECLADO</h3>
+                <h3>Governador</h3>
 
-                <div class="botoes">
-
-
-                    <a href="#presidente13" class="botao">13</a>
-                    <a href="#presidente22" class="botao">22</a>
-                    <a href="#presidente45" class="botao">45</a>
-
-
-                    <a href="#governador10" class="botao">10</a>
-                    <a href="#governador20" class="botao">20</a>
-                    <a href="#governador30" class="botao">30</a>
-
-                    <a href="#" class="botao">1</a>
-                    <a href="#" class="botao">2</a>
-                    <a href="#" class="botao">3</a>
-
-                    <a href="#" class="botao">4</a>
-                    <a href="#" class="botao">5</a>
-                    <a href="#" class="botao">6</a>
-
-                    <a href="#" class="botao">7</a>
-                    <a href="#" class="botao">8</a>
-                    <a href="#" class="botao">9</a>
-
-                </div>
+                <p>45 - Pedro Souza</p>
+                <p>50 - Lucas Oliveira</p>
 
             </div>
 
         </div>
 
+
+        <div class="teclado">
+
+            <h2>TECLADO</h2>
+
+            <a href="#carlos" class="botao">13</a>
+
+            <a href="#joao" class="botao">22</a>
+
+            <a href="#pedro" class="botao">45</a>
+
+            <a href="#lucas" class="botao">50</a>
+
+        </div>
+
     </div>
 
 
 
+    <div id="carlos" class="confirmacao">
 
-    <div id="presidente13" class="confirmacao">
-        <div class="caixa-confirmacao">
-            <h2>Voto confirmado</h2>
+        <h2>Confirmação</h2>
 
-            <p>
-                Você votou em: <strong>Carlos Silva</strong>
-            </p>
+        <p>
+            Você votou em:
+            <strong>Carlos Silva</strong>
+        </p>
 
-            <a href="#" class="fechar">Fechar</a>
-        </div>
-    </div>
+        <p>
+            Para:
+            <strong>Presidente</strong>
+        </p>
 
+        <a href="#" class="fechar">Fechar</a>
 
-    <div id="presidente22" class="confirmacao">
-        <div class="caixa-confirmacao">
-            <h2>Voto confirmado</h2>
-
-            <p>
-                Você votou em: <strong>João Santos</strong>
-            </p>
-
-            <a href="#" class="fechar">Fechar</a>
-        </div>
-    </div>
-
-
-    <div id="presidente45" class="confirmacao">
-        <div class="caixa-confirmacao">
-            <h2>Voto confirmado</h2>
-
-            <p>
-                Você votou em: <strong>Marcos Oliveira</strong>
-            </p>
-
-            <a href="#" class="fechar">Fechar</a>
-        </div>
     </div>
 
 
 
+    <div id="joao" class="confirmacao">
 
-    <div id="governador10" class="confirmacao">
-        <div class="caixa-confirmacao">
-            <h2>Voto confirmado</h2>
+        <h2>Confirmação</h2>
 
-            <p>
-                Você votou em: <strong>Pedro Souza</strong>
-            </p>
+        <p>
+            Você votou em:
+            <strong>João Santos</strong>
+        </p>
 
-            <a href="#" class="fechar">Fechar</a>
-        </div>
+        <p>
+            Para:
+            <strong>Presidente</strong>
+        </p>
+
+        <a href="#" class="fechar">Fechar</a>
+
     </div>
 
 
-    <div id="governador20" class="confirmacao">
-        <div class="caixa-confirmacao">
-            <h2>Voto confirmado</h2>
 
-            <p>
-                Você votou em: <strong>Lucas Mendes</strong>
-            </p>
+    <div id="pedro" class="confirmacao">
 
-            <a href="#" class="fechar">Fechar</a>
-        </div>
+        <h2>Confirmação</h2>
+
+        <p>
+            Você votou em:
+            <strong>Pedro Souza</strong>
+        </p>
+
+        <p>
+            Para:
+            <strong>Governador</strong>
+        </p>
+
+        <a href="#" class="fechar">Fechar</a>
+
     </div>
 
 
-    <div id="governador30" class="confirmacao">
-        <div class="caixa-confirmacao">
-            <h2>Voto confirmado</h2>
 
-            <p>
-                Você votou em: <strong>André Costa</strong>
-            </p>
+    <div id="lucas" class="confirmacao">
 
-            <a href="#" class="fechar">Fechar</a>
-        </div>
+        <h2>Confirmação</h2>
+
+        <p>
+            Você votou em:
+            <strong>Lucas Oliveira</strong>
+        </p>
+
+        <p>
+            Para:
+            <strong>Governador</strong>
+        </p>
+
+        <a href="#" class="fechar">Fechar</a>
+
     </div>
 
 </body>
+
 </html>
