@@ -46,12 +46,12 @@ h1 {
 
 
 #presidente:target,
-.urna:has(#carlos:target, #joao:target, #ana:target) #presidente {
+.urna:has(#cristiano:target, #messi:target, #neymar:target) #presidente {
     display: block;
 }
 
 #governador:target,
-.urna:has(#pedro:target, #lucas:target, #mariana:target) #governador {
+.urna:has(#halland:target, #mbappe:target, #vinicius:target) #governador {
     display: block;
 }
 
