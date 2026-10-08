@@ -1,0 +1,129 @@
+body {
+    background-color: #d3d3d3;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.urna {
+    width: 700px;
+    margin: 50px auto;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h1 {
+    color: white;
+}
+
+
+.selecao-cargo {
+    background-color: #f1f1f1;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.botao-cargo {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px 25px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.botao-cargo:hover {
+    background-color: #0056b3;
+}
+
+
+.secao-cargo {
+    display: none;
+}
+
+
+#presidente:target,
+.urna:has(#carlos:target, #joao:target, #ana:target) #presidente {
+    display: block;
+}
+
+#governador:target,
+.urna:has(#pedro:target, #lucas:target, #mariana:target) #governador {
+    display: block;
+}
+
+
+.urna:has(:target) .selecao-cargo {
+    display: none;
+}
+
+.tela {
+    background-color: #f1f1f1;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.candidato {
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid black;
+}
+
+.teclado {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.teclado h2 {
+    color: white;
+}
+
+.botao {
+    display: inline-block;
+    width: 70px;
+    margin: 5px;
+    padding: 15px;
+    background-color: #666;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.botao:hover {
+    background-color: #888;
+}
+
+.confirmacao {
+    display: none;
+    background-color: white;
+    width: 400px;
+    padding: 30px;
+    margin: 30px auto;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.confirmacao:target {
+    display: block;
+}
+
+.fechar {
+    display: inline-block;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.fechar:hover {
+    background-color: #555;
+}

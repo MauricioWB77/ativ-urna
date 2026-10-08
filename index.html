@@ -4,95 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Urna Eletrônica</title>
-
-    <style>
-
-        body {
-            background-color: #d3d3d3;
-            font-family: Arial;
-            text-align: center;
-        }
-
-        .urna {
-            width: 700px;
-            margin: 50px auto;
-            background-color: #333;
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        h1 {
-            color: white;
-        }
-
-        .tela {
-            background-color: #f1f1f1;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-        }
-
-        .candidato {
-            background-color: white;
-            padding: 10px;
-            margin: 10px;
-            border: 1px solid black;
-        }
-
-        .teclado {
-            background-color: #222;
-            padding: 20px;
-        }
-
-        .teclado h2 {
-            color: white;
-        }
-
-        .botao {
-            display: inline-block;
-            width: 70px;
-            margin: 5px;
-            padding: 15px;
-            background-color: #666;
-            color: white;
-            text-decoration: none;
-            font-size: 20px;
-            border-radius: 5px;
-        }
-
-        .botao:hover {
-            background-color: #888;
-        }
-
-        .confirmacao {
-            display: none;
-            background-color: white;
-            width: 400px;
-            padding: 30px;
-            margin: 30px auto;
-            border: 2px solid black;
-            border-radius: 10px;
-        }
-
-        .confirmacao:target {
-            display: block;
-        }
-
-        .fechar {
-            display: inline-block;
-            background-color: #333;
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-        }
-
-        .fechar:hover {
-            background-color: #555;
-        }
-
-    </style>
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -101,125 +13,121 @@
 
         <h1>URNA ELETRÔNICA</h1>
 
-        <div class="tela">
+        <!-- TELA INICIAL: ESCOLHA DO CARGO -->
+        <div class="selecao-cargo">
+            <h2>Escolha o cargo para votar:</h2>
+            <a href="#presidente" class="botao-cargo">Presidente</a>
+            <a href="#governador" class="botao-cargo">Governador</a>
+        </div>
 
-            <h2>Candidatos</h2>
+        <!-- SEÇÃO: PRESIDENTE -->
+        <div id="presidente" class="secao-cargo">
 
-            <div class="candidato">
+            <div class="tela">
+                <h2>Candidatos a Presidente</h2>
 
-                <h3>Presidente</h3>
+                <div class="candidato">
+                    <p><strong>13</strong> - Carlos Silva</p>
+                </div>
 
-                <p>13 - Carlos Silva</p>
-                <p>22 - João Santos</p>
+                <div class="candidato">
+                    <p><strong>22</strong> - João Santos</p>
+                </div>
 
+                <div class="candidato">
+                    <p><strong>15</strong> - Ana Lima</p>
+                </div>
             </div>
 
-            <div class="candidato">
-
-                <h3>Governador</h3>
-
-                <p>45 - Pedro Souza</p>
-                <p>50 - Lucas Oliveira</p>
-
+            <div class="teclado">
+                <h2>TECLADO</h2>
+                <a href="#carlos" class="botao">13</a>
+                <a href="#joao" class="botao">22</a>
+                <a href="#ana" class="botao">15</a>
             </div>
+
+            <a href="#" class="fechar">← Escolher outro cargo</a>
 
         </div>
 
+        <!-- SEÇÃO: GOVERNADOR -->
+        <div id="governador" class="secao-cargo">
 
-        <div class="teclado">
+            <div class="tela">
+                <h2>Candidatos a Governador</h2>
 
-            <h2>TECLADO</h2>
+                <div class="candidato">
+                    <p><strong>45</strong> - Pedro Souza</p>
+                </div>
 
-            <a href="#carlos" class="botao">13</a>
+                <div class="candidato">
+                    <p><strong>50</strong> - Lucas Oliveira</p>
+                </div>
 
-            <a href="#joao" class="botao">22</a>
+                <div class="candidato">
+                    <p><strong>12</strong> - Mariana Costa</p>
+                </div>
+            </div>
 
-            <a href="#pedro" class="botao">45</a>
+            <div class="teclado">
+                <h2>TECLADO</h2>
+                <a href="#pedro" class="botao">45</a>
+                <a href="#lucas" class="botao">50</a>
+                <a href="#mariana" class="botao">12</a>
+            </div>
 
-            <a href="#lucas" class="botao">50</a>
+            <a href="#" class="fechar">← Escolher outro cargo</a>
 
         </div>
 
     </div>
 
 
+    <!-- MODAIS DE CONFIRMAÇÃO: PRESIDENTE -->
 
-    <div id="carlos" class="confirmacao">
-
+  <div id="carlos" class="confirmacao">
         <h2>Confirmação</h2>
+        <p>Você votou em: <strong>Carlos Silva</strong></p>
+        <p>Para: <strong>Presidente</strong></p>
+        <a href="#presidente" class="fechar">Fechar</a>
+ </div>
 
-        <p>
-            Você votou em:
-            <strong>Carlos Silva</strong>
-        </p>
+  <div id="joao" class="confirmacao">
+        <h2>Confirmação</h2>
+        <p>Você votou em: <strong>João Santos</strong></p>
+        <p>Para: <strong>Presidente</strong></p>
+        <a href="#presidente" class="fechar">Fechar</a>
+    </div>
 
-        <p>
-            Para:
-            <strong>Presidente</strong>
-        </p>
-
-        <a href="#" class="fechar">Fechar</a>
-
+    <div id="ana" class="confirmacao">
+        <h2>Confirmação</h2>
+        <p>Você votou em: <strong>Ana Lima</strong></p>
+        <p>Para: <strong>Presidente</strong></p>
+        <a href="#presidente" class="fechar">Fechar</a>
     </div>
 
 
+    <!-- MODAIS DE CONFIRMAÇÃO: GOVERNADOR -->
 
-    <div id="joao" class="confirmacao">
-
+  <div id="pedro" class="confirmacao">
         <h2>Confirmação</h2>
+        <p>Você votou em: <strong>Pedro Souza</strong></p>
+        <p>Para: <strong>Governador</strong></p>
+        <a href="#governador" class="fechar">Fechar</a>
+        </div>
 
-        <p>
-            Você votou em:
-            <strong>João Santos</strong>
-        </p>
-
-        <p>
-            Para:
-            <strong>Presidente</strong>
-        </p>
-
-        <a href="#" class="fechar">Fechar</a>
-
+   <div id="lucas" class="confirmacao">
+        <h2>Confirmação</h2>
+        <p>Você votou em: <strong>Lucas Oliveira</strong></p>
+        <p>Para: <strong>Governador</strong></p>
+        <a href="#governador" class="fechar">Fechar</a>
     </div>
 
-
-
-    <div id="pedro" class="confirmacao">
-
+    <div id="mariana" class="confirmacao">
         <h2>Confirmação</h2>
-
-        <p>
-            Você votou em:
-            <strong>Pedro Souza</strong>
-        </p>
-
-        <p>
-            Para:
-            <strong>Governador</strong>
-        </p>
-
-        <a href="#" class="fechar">Fechar</a>
-
-    </div>
-
-
-
-    <div id="lucas" class="confirmacao">
-
-        <h2>Confirmação</h2>
-
-        <p>
-            Você votou em:
-            <strong>Lucas Oliveira</strong>
-        </p>
-
-        <p>
-            Para:
-            <strong>Governador</strong>
-        </p>
-
-        <a href="#" class="fechar">Fechar</a>
-
+        <p>Você votou em: <strong>Mariana Costa</strong></p>
+        <p>Para: <strong>Governador</strong></p>
+        <a href="#governador" class="fechar">Fechar</a>
     </div>
 
 </body>
