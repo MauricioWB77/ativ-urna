@@ -51,7 +51,7 @@ h1 {
 }
 
 #governador:target,
-.urna:has(#halland:target, #mbappe:target, #vinicius:target) #governador {
+.urna:has(#haaland:target, #mbappe:target, #vinicius:target) #governador {
     display: block;
 }
 
